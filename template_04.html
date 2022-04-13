@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/template_04.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <title>template04</title>
+</head>
+<body>
+  <!-- 헤더시작 -->
+  <header id="header">
+    <div class="menubtn">
+      <img src="" alt="">
+    </div>
+    <div class="logo_wrap">
+      <img src="" alt="">
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="">이용안내</a></li>
+        <li><a href="">진료과/의료진안내</a></li>
+        <li><a href="">중점진료센터</a></li>
+        <li><a href="">비수술치료센터</a></li>
+        <li><a href="">종합검진센터</a></li>
+        <li><a href="">병원소개</a></li>
+      </ul>
+    </div>
+    <div class="call">
+      <a href="" class="fz21 fw700 ">문의 055-785-3375</a>
+    </div>
+  </header>
+  <script>
+    //헤더 드롭
+    let header = document.querySelector("#header");
+    let headerHeight = header.offsetHeight;
+
+    window.onscroll = function () {
+      let windowTop = window.scrollY;
+      // 스크롤 세로값이 헤더높이보다 크거나 같으면 
+      // 헤더에 클래스 'drop'을 추가한다
+      if (windowTop >= headerHeight) {
+        header.classList.add("drop");
+      } 
+      // 아니면 클래스 'drop'을 제거
+      else {
+        header.classList.remove("drop");
+      }
+    };
+  </script>
+  <!-- 헤더 끝 -->
+
+  <!-- 사이드바 시작 -->
+  <div class="side_bar"></div>
+  <!-- 사이드바 끝 -->
+
+  <!-- 메인 슬라이드 시작 -->
+  <div class="mainslide">
+    <div class="swiper main_slide">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/2000x1000.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/2000x1000.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/2000x1000.png" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="https://via.placeholder.com/2000x1000.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var swiper = new Swiper(".main_slide", {
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop : true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+  <!-- 메인 슬라이드 끝 -->
+
+  <!-- 민원안내 시작 -->
+  <div class="guide section">
+    <div class="w-1400 flex_box">
+      <div class="box box01">
+        <ul>
+          <li>
+            <a href="">
+              <div class="img_wrap">
+                <img src="" alt="">
+              </div>
+              <p>제증명발급</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="img_wrap">
+                <img src="" alt="">
+              </div>
+              <p>진료시간</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="img_wrap">
+                <img src="" alt="">
+              </div>
+              <p>층별안내</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="img_wrap">
+                <img src="" alt="">
+              </div>
+              <p>오시는길</p>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <div class="img_wrap">
+                <img src="" alt="">
+              </div>
+              <p>주차안내</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="box box02">
+        <b>진료시간</b>
+        <ul>
+          <li>
+            <p>월~금</p>
+            <span>오전 9시 ~ 오후 5시 30분</span>
+          </li>
+          <li>
+            <p>토요일</p>
+            <span>오전 9시 ~ 오전 11시 30분</span>
+          </li>
+          <li>
+            <p>점심시간</p>
+            <span>오후 12시 30분 ~ 오후 1시 30분</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 민원안내 끝 -->
+
+  <!-- 텍스트로고 구간 시작 -->
+  <div class="textlogo_section"></div>
+  <!-- 텍스트로고 구간 끝 -->
+
+  <!-- 빠른이동메뉴 시작 -->
+  <section class="p75 quick_section full_bg">
+    <div class="w-1400">
+      <h2 class="section_title fz30 fw700">어디가 아프세요?</h2>
+      <div class="quick_menu_wrap">
+        <ul>
+          <li class="on">
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+          <li>
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700">허리</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- 빠른이동메뉴 끝 -->
+
+  <!-- 진료센터 시작 -->
+  <section class="section medicenter">
+    <div class="w-1400">
+      <h1 class="text-c">담하 진료센터</h1>
+      <p class="text-c">어쩌구저쩌구~~ 서브 타이틀~~~</p>
+      <div class="box flex_box">
+        <div class="img_wrap box01">
+          <img src="" alt="">
+        </div>
+        <div class="img_wrap box02">
+          <img src="" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 진료센터 끝 -->
+
+  <!-- 의료진 슬라이드 시작 -->
+  <section class="section doc_slide">
+    <div class="w-1400 flex_box">
+      <div class="section_title">
+        <p class="fw700 fc01">담하<br class="hidden-xs">의료진</p>
+        <p class="fc01 fz19">풍부한 임상 경험과 노하우를 갖춘
+          <br>각 분야의 우수한 의료진이
+          <br>치료부터 관리까지 책임집니다.</p>
+      </div>
+      <div class="swiper slide_02">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700 fc01"><span class="fz18 fw700 fc01 bg-navy text-c">정형외과</span> <span class="fz24 fw700">김담하</span> 대표원장</p>
+          </div>
+          <div class="swiper-slide">
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700 fc01"><span  class="fz18 fw700 fc01 bg-navy text-c">정형외과</span> <span class="fz24 fw700">김담하</span> 원장</p>
+          </div>
+          <div class="swiper-slide">
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700 fc01"><span  class="fz18 fw700 fc01 bg-navy text-c">정형외과</span> <span class="fz24 fw700">김담하</span> 원장</p>
+          </div>
+          <div class="swiper-slide">
+            <div class="img_wrap">
+              <img src="" alt="">
+            </div>
+            <p class="fz18 fw700 fc01"><span  class="fz18 fw700 fc01 bg-navy text-c">정형외과</span> <span class="fz24 fw700">김담하</span> 과장</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    var swiper = new Swiper(".slide_02", {
+      slidesPerView: 1,
+      breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        },
+      spaceBetween: 20,
+      loop : true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+    });
+  </script>
+  <!-- 의료진 슬라이드 끝 -->
+
+  <!-- 오시는 길 & 공지사항 시작 -->
+  <section class="section mini_notice">
+    <div class="w-1400 flex_box">
+      <div class="box01 box">
+        <h1 class="fz32 fw700">담하병원 오시는길</h1>
+        <div class="map"></div>
+        <div class="location"></div>
+      </div>
+      <div class="box02 box">
+        <h1 class="fz32 fw700">담하소식</h1>
+        <ul>
+          <li>
+            <a href="#" class="fz19 ">담하 병원 홈페이지가 오픈되었습니다.</a>
+            <p class="fz18 fw700">2021-09-01</p>
+          </li>
+          <li>
+            <p class="fz19 ">담하 병원 홈페이지가 오픈되었습니다.</p>
+            <p class="fz18 fw700">2021-09-01</p>
+          </li>
+          <li>
+            <p class="fz19 ">담하 병원 홈페이지가 오픈되었습니다.</p>
+            <p class="fz18 fw700">2021-09-01</p>
+          </li>
+          <li>
+            <p class="fz19 ">담하 병원 홈페이지가 오픈되었습니다.</p>
+            <p class="fz18 fw700">2021-09-01</p>
+          </li>
+          <li>
+            <p class="fz19 ">담하 병원 홈페이지가 오픈되었습니다.</p>
+            <p class="fz18 fw700">2021-09-01</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </section>
+  <!-- 오시는 길 & 공지사항 끝 -->
+
+  <!-- 퀵배너 시작 -->
+  <div class="quick_banner">
+    <div class="w-1400">
+      <ul>
+        <li>
+          <div class="img_wrap">
+            <img src="" alt="">
+          </div>
+          <p>담하 네이버블로그</p>
+        </li>
+        <li>
+          <div class="img_wrap">
+            <img src="" alt="">
+          </div>
+          <p>담하 인스타그램</p>
+        </li>
+        <li>
+          <div class="img_wrap">
+            <img src="" alt="">
+          </div>
+          <p>담하 카카오톡</p>
+        </li>
+        <li>
+          <div class="img_wrap">
+            <img src="" alt="">
+          </div>
+          <p>담하 포스트</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 퀵배너 끝 -->
+
+  <!-- 푸터 시작 -->
+  <footer id="footer">
+    <div class="w-1400">
+      <div class="section_title">
+        <div class="img_wrap">
+          <img src="" alt="">
+        </div>
+      </div>
+      <div class="section_contents">
+        <div class="upside-footer">
+          <ul>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">비급여진료비안내</a></li>
+            <li><a href="#" class="bold">개인정보취급방침</a></li>
+          </ul>
+        </div>
+        <div class="downside-footer">
+          <p>부산광역시 연제구 과정로 166 3층</p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <p class="medium">Copyright 2022 담하병원. ALL RIGHT RESERVED.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- 푸터 끝 -->
+
+  
+</body>
+</html>

@@ -1,0 +1,643 @@
+// 웹폰트
+// 스포카한스네오
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+// 몽세라
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+// BreakPoints
+@mixin mq($point) {
+  @if $point == pc {
+    @media (min-width: 2000px) {
+      @content;
+    }
+  }
+  @if $point == tablet_pc {
+    @media (min-width: 769px) and (max-width:1999px){
+      @content;
+    }
+  }
+  @if $point == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}
+.hidden-xs {
+  @include mq(mobile) {
+    display: none;
+  }
+}
+.visible-xs{
+  display: none;
+  @include mq(mobile){
+    display: block;
+  }
+}
+
+// 전체설정
+*{box-sizing: border-box;}
+
+html,body {margin: 0; padding: 0; font-size: 6.25%;height: 100%;width: 100%;
+  font-family:'Spoqa Han Sans Neo'; box-sizing: border-box;}
+h1,p,ul {  margin: 0;  padding: 0;}
+li {list-style: none;}
+a {color: #000;text-decoration: none !important;}
+.left {float: left !important;}
+.right {float: right !important;}
+.clear {clear: both;}
+p {margin: 0;padding: 0;word-break: break-all;word-wrap: break-word;}
+b {font-weight: bold;}
+br {font-family: 'Spoqa Han Sans Neo' !important;}
+em, address, i, q{font-style: normal;}
+ul, ol{
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6{margin: 0;}
+
+// 폰트, 컬러설정
+.fz16{font-size: 16rem;}
+.fz18{font-size: 18rem;}
+.fz19{font-size: 19rem;}
+.fz21{font-size: 21rem;}
+.fz24{font-size: 24rem;}
+.fz28{font-size: 28rem;}
+.fz30{font-size: 30rem;}
+.fz32{font-size: 32rem;}
+.fz40{font-size: 40rem;}
+
+.line_h{line-height: 1.6em;}
+
+.fc01{color: #fff;}
+
+.fw300{font-weight: 300;}
+.fw400{font-weight: 400;}
+.fw500{font-weight: 500;}
+.fw600{font-weight: 600;}
+.fw700{font-weight: 700;}
+.fw800{font-weight: 800;}
+.fw900{font-weight: 900;}
+
+
+
+// 공통
+.section{
+  padding: 100rem 0;
+  width: 100%;
+  overflow: hidden;
+}
+.w-1400{
+  margin: 0 auto;
+  width: 1400rem;
+  @include mq(mobile){
+    width: 90%;
+  }
+}
+.mt-100{margin-top: 100rem;}
+.mt-50{margin-top: 50rem;}
+.p75{padding: 75rem 0;}
+.full_bg{background-color: #F9F9F9;}
+.text-c{text-align: center;}
+
+.flex_box{
+  display: flex;
+  @include mq(mobile){
+    flex-direction: column;
+  }
+}
+
+//헤더
+#header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rem;
+  background-color: rgba(255,255,255,0.2);
+  transition: all ease 0.3s;
+  &.drop{
+    background-color: #fff;
+    box-shadow: 0 3rem 3rem rgba($color: #000000, $alpha: 0.15);
+  }
+  .menubtn{
+    padding: 30rem;
+    box-sizing: content-box;
+    width: 40rem;
+    height: 40rem;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .logo_wrap{
+    width: 200rem;
+    height: 50rem;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    ul{
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      a{
+        font-size: 19rem;
+      }
+    }
+  }
+  .call{
+    margin-right: 30rem;
+    width: 250rem;
+    height: 60rem;
+    border-radius: 30rem;
+    background-color: #1F77A5;
+    a{
+      display: inline-block;
+      padding: 15rem 30rem;
+      width: 250rem;
+      height: 60rem;
+      color: #fff;
+    }
+  }
+}
+
+//사이드바
+.side_bar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100rem;
+  height: 100%;
+  z-index: 10;
+  background: linear-gradient(to bottom , #1F2677 , #1F77A5);
+  @include mq(mobile){
+    display: none;
+  }
+}
+
+//메인 슬라이드
+.main_slide{
+  width: 100%;
+  height: 100vh;
+  .swiper{
+    width: 100%;
+    height: 100vh;
+    .swiper-wrapper{
+      width: 100%;
+      height: 100%;
+      .swiper-slide{
+        width: 100%;
+        height: 100%;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+//안내
+.guide{
+  position: relative;
+  width: 100%;
+  height: 350rem;
+  &::before{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+    content: "";
+    display: inline-block;
+    width: 50%;
+    height: 150rem;
+    background-color: #1F77A5;
+  }
+  .w-1400{
+    height: 150rem;
+    .box{
+      width: 50%;
+      height: 150rem;
+    }
+    .box01{
+      // background-color: #f3f3f3;
+      ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100%;
+        a{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          row-gap: 10rem;
+          width: 90rem;
+          height: 90rem;
+          .img_wrap{
+            width: 50rem;
+            height: 50rem;
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+          p{
+            font-size: 19rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    .box02{
+      padding: 40rem;
+      display: flex;
+      b{
+        float: left;
+        font-size: 19rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      ul{
+        margin-left: 40rem;
+        width: 65%;
+        li{
+          display: flex;
+          justify-content: space-between;
+          p{
+            font-size: 19rem;
+            color: #fff;
+          }
+          span{
+            font-size: 19rem;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+//텍스트로고 구간
+.textlogo_section{
+  position: relative;
+  width: 100%;
+  height: 300rem;
+  &::after{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    content: " DAMHA HOSPITAL ";
+    display: inline-block;
+    font-family: 'Monserrat';
+    font-weight: bold;
+    font-size: 160rem;
+    color: rgba(48,48,48,0.03);
+  }
+}
+
+//빠른이동메뉴
+.quick_section{
+  .w-1400{
+    display: flex;
+    justify-content: space-between;
+    .section_title{
+      width: 20%;
+    }
+    .quick_menu_wrap{
+      width: 1050rem;
+      ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        li{
+          padding: 20rem ;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          row-gap: 10rem;
+          justify-content: space-between;
+          position: relative;
+          border-radius: 50rem;
+          width: 100rem;
+          height: 150rem;
+          transition: all ease 0.3s;
+          &::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            background-color: #f3f3f3;
+            width: 100rem;
+            height: 100rem;
+            border-radius: 50rem;
+            transition: all ease 0.3s;
+          }
+          &.on{
+            &::after{
+              display: none;
+            }
+            p{
+              color: #fff;
+            }
+            background-color: #073595;
+            border-radius: 50rem;
+          }
+          &:hover{
+            cursor: pointer;
+            &::after{
+              display: none;
+            }
+            p{
+              color: #fff;
+            }
+            background-color: #073595;
+            border-radius: 50rem;
+          }
+          .img_wrap{
+            width: 60rem;
+            height: 60rem;
+            img{
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//진료센터
+.medicenter{
+  padding: 250rem 0;
+  overflow: hidden;
+  h1{
+    position: relative;
+    font-size: 68rem;
+    &::after{
+      position: absolute;
+      content: "Center";
+      top: -120rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 160rem;
+      color: rgba(48,48,48,0.05);
+    }
+  }
+  p{
+    margin-top: 20rem;
+    font-size: 19rem;
+  }
+  .box{
+    margin-top: 80rem;
+    position: relative;
+    width: 100%;
+    height: 670rem;
+    .img_wrap{
+      position: absolute;
+      width: 700rem;
+      height: 600rem;
+      background-color: #c4c4c4;
+    }
+    .box01{
+      top: 0;
+      left: 0;
+    }
+    .box02{
+      right: 0;
+      bottom: 0;
+      background-color: #1F77A5;
+    }
+  }
+}
+
+//의료진 슬라이드
+.doc_slide{
+  padding: 200rem 0  ;
+  width: 100%;
+  height: 700rem;
+  // overflow: hidden;
+  background: linear-gradient(to right , #1F2677 , #1F77A5);
+  .w-1400{
+    position: relative;
+    @include mq(mobile){
+      // width: 100%;
+    }
+  }
+  .section_title{
+    width: 25%;
+    @include mq(mobile){
+      width: 100%;
+    }
+    .fw700{
+      font-size: 68rem;
+    }
+  }
+  .swiper{
+    position: absolute;
+    left: 25%;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    @include mq(mobile){
+      position: static;
+    }
+    .swiper-wrapper{
+      // width: 100%;
+      height: 100%;
+      .swiper-slide{
+        width: 320rem;
+        height: 300rem;
+        .img_wrap{
+          width: 320rem;
+          height: 240rem;
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        p{
+          margin-top: 10rem;
+          display: flex;
+          align-items: center;
+        }
+        .bg-navy{
+          margin-right: 20rem;
+          display: inline-block;
+          width: 100rem;
+          height: 30rem;
+          background-color: #073595;
+        }
+        .fz24{
+          margin-right: 10rem;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+//오시는길&공지사항
+.mini_notice{
+  padding: 180rem 0;
+  width: 100%;
+  .w-1400{
+    overflow: hidden;
+    justify-content: space-between;
+    .box{
+      width: 49%;
+      @include mq(mobile){
+        width: 100%;
+      }
+      h1{
+        margin-bottom: 20rem;
+      }
+    }
+    .box01{
+      // background-color: #c4c4c4;
+      .map{
+        width: 100%;
+        height: 350rem;
+        background-color: #f3f3f3;
+      }
+      .location{
+        width: 100%;
+        height: 85rem;
+        background-color: #1F2677;
+      }
+    }
+    .box02{
+      @include mq(mobile){
+        margin-top: 50rem;
+      }
+      ul{
+        width: 100%;
+        border-top: 1rem solid rgba(48,48,48,0.2);
+        li{
+          padding: 30rem 0;
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1rem solid rgba(48,48,48,0.2);
+          .fw700{
+            font-family: 'Monserrat';
+            color: rgba($color: #1F77A5, $alpha: 0.5);
+          }
+        }
+      }
+    }
+  }
+}
+
+//퀵배너
+.quick_banner{
+  width: 100%;
+  height: 100rem;
+  background-color: rgba($color: #13163A, $alpha: 0.1);
+  .w-1400{
+    padding: 32rem 0;
+  }
+  ul{
+    display: flex;
+    justify-content: space-between;
+    li{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 20rem;
+      .img_wrap{
+        width: 40rem;
+        height: 40rem;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      p{
+        font-size: 17rem;
+        color: rgba($color: #13163A, $alpha: 0.3);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+//푸터
+#footer{
+  padding: 40rem 0 ;
+  width: 100%;
+  overflow: hidden;
+  background-color: #13163A;
+  .section_title{
+    float: left;
+    width: 25%;
+    .img_wrap{
+      width: 200rem;
+      height: 50rem;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+  .section_contents{
+    float: right;
+    width: 75%;
+    .upside-footer{
+      padding-bottom: 20rem;
+      width: 100%;
+      border-bottom: 1rem solid rgba($color: #fff, $alpha: 0.3);
+      ul{
+        display: flex;
+        li{
+          padding: 0 35rem;
+          border-right: 1rem solid rgba($color: #fff, $alpha: 0.3);
+          &:first-child{
+            padding-left: 0;
+          }
+          &:last-child{
+            border: none;
+          }
+          a{
+            color: rgba($color: #fff, $alpha: 0.3);
+            font-size: 17rem;
+            &.bold{
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+    .downside-footer{
+      padding-top: 20rem;
+      p{
+        font-size: 17rem;
+        color: rgba($color: #fff, $alpha: 0.3);
+        &.medium{
+          color: rgba($color: #fff, $alpha: 0.5);
+        }
+      }
+    }
+  }
+}
